@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./images/favicon.ico">
+
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="./styles/reset.css" type="text/css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/styles.css" type="text/css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Delius+Unicase|Roboto:400,500" rel="stylesheet">
+
+    <title>Brain Fart</title>
+  </head>
+  <body>
+    <header role="banner">
+      <h1 id="heading">Brain Fart</h1>
+      <h2 id="sub-heading">the game for when your memory stinks...</h2>
+    </header>
+    <main>
+
+      <!-- Results window for Winner-->
+      <section class="results">
+        <h2 id="you-won-msg">You won!</h2>
+        <p id="win-time"></p>
+
+        <!-- Play Again Button for Modal Window -->
+        <div class="btn">
+          <button class="play-again-btn">Play Again</button>
+        </div>
+
+        <div id="top-five-container">
+          <h3 id="top-five-heading">Top 5 Best</h3>
+            <ul id="winners-board">
+              <li class="placing">1st: <span id="first"></span> </li>
+              <li class="placing">2nd: <span id="second"></span></li>
+              <li class="placing">3rd: <span id="third"></span></li>
+              <li class="placing">4th: <span id="fourth"></span></li>
+              <li class="placing">5th: <span id="fifth"></span></li>
+            </ul>
+        </div>
+      </section>
+
+      <!-- Visual result for Loser-->
+      <section id="loser-x">
+        <dix id="loser-symbol">&#10754;</dix>
+      </section>
+
+      <!-- Time-Score-Strikes Panel -->
+      <section id="time-strikes-score">
+        <div class="ctrl-container">
+          <h3 class="ctrl-headers">Timer</h3>
+          <p id="time">0:0:0</p>
+        </div>
+        <div class="ctrl-container">
+          <h3 class="ctrl-headers" id="scorehead">Score</h3>
+          <p id="score">0</p>
+        </div>
+        <div class="ctrl-container">
+          <h3 class="ctrl-headers">Strikes</h3>
+          <p id="strikes">0</p>
+        </div>
+      </section>
+
+      <!-- Select Content Menu -->
+      <div id="menu-container">
+        <select id="menu" name="content-menu" autofocus>
+          <option disabled selected>Select Words</option>
+          <option value="fruit">Fruit</option>
+          <option value="animals">Animals</option>
+          <option value="spanish">Spanish</option>
+          <option value="fruit_pics">Fruit Pictures</option>
+        </select>
+      </div>
+
+      <!-- Play Button -->
+      <div class="btn">
+        <button class="play-btn">Play</button>
+        <button class="reset-btn hide">Reset</button>
+      </div>
+
+
+
+      <section id="gameboard">
+        <!-- JavaScript creates the game board -->
+      </section>
+
+    </main>
+    <footer>
+      &copy;2018SteveHanlon
+    </footer>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="./js/my_script.js" type="text/javascript"></script>
+  <!-- <script type="module" src="./js/content.js" type="text/javascript"></script> -->
+
+
+  </body>
+  </html>

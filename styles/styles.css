@@ -1,0 +1,300 @@
+body {
+  font-size: 16px;
+  max-width: 100vw;
+  height: 100vh;
+}
+
+header, footer {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 125, 0, 1);
+}
+
+footer {
+  font-family: 'Roboto', sans-serif;
+}
+
+#heading {
+  font-size: 4rem;
+  font-family: 'Delius Unicase', cursive;
+  margin: 0 0 20px 0;
+  text-shadow: 1px 1px 1px #FFF;
+}
+
+#sub-heading {
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  margin: 0 0 50px 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameboard {
+  width: 80%;
+  min-height: 100vh;
+  padding: 3% 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+}
+
+.square {
+  border: 1px solid #FF7D00;
+  margin: 5px;
+  width: 20%;
+  height: 200px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card-cover {
+  position: absolute;
+  background:  #FF9A39;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  opacity: 1;
+  transition: opacity .3
+}
+
+.card-show {
+  opacity: 0;
+  /* animation-name: card-show;
+  animation-duration: 5s; */
+}
+
+/* @keyframes card-show {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+} */
+
+
+
+p, .span-for-content {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+}
+
+img {
+  width: 100%;
+}
+
+/* .invisible {
+    opacity: 0;
+    transition: opacity .3s;
+    padding: 20px;
+}
+
+.visible {
+    opacity: 1;
+} */
+
+
+
+/*=======================
+      Control Panel
+=========================*/
+#time-strikes-score {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 20px 0 5px 0;
+}
+
+.ctrl-headers {
+  font-size: 2.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: rgba(179, 30, 201, 1);
+  margin-bottom: 5px;
+}
+
+#score, #strikes, #time {
+  font-size: 2rem;
+  font-family: 'Delius Unicase', cursive;
+}
+
+#scorehead {
+  color: rgba(255, 125, 0, 1);
+}
+
+.ctrl-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 2% 5%;
+  border-radius: 25px;
+}
+
+#menu-container {
+  margin: 15px;
+}
+#menu {
+  width: 165px;
+  height: 30px;
+  font-size: 1.3rem;
+  background: #fa7c02;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  outline-color: black;
+}
+
+/* Start Button */
+.btn {
+  margin: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  padding: 10px 60px;
+  font-size: 1.5rem;
+  font-family: 'Delius Unicase', cursive;
+  background-color: rgba(179, 30, 201, 1);
+  color: #fff;
+  border: 2px solid rgba(0, 0, 0, .5);
+  border-radius: 25px;
+  transition: all .2s;
+  outline: none;
+}
+
+button:hover {
+    background-color: rgba(179, 30, 201, .9);
+}
+
+button:active {
+  background-color: rgba(180, 255, 54, 1);
+  color: #000;
+  border: 2px solid black;
+}
+
+.hide {
+  display: none;
+}
+
+
+
+/* Timer */
+.time-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#time span {
+  width: 100px;
+  letter-spacing: 2px;
+}
+
+
+/*=======================
+    Winner Modal Window
+=========================*/
+.results {
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: -62vw;
+  width: 60%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+  background-color: #ffd26b;
+  border-radius: 25px;
+  opacity: 0;
+  transition: all .5s;
+}
+
+#loser-x {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 5%;
+  text-shadow: 1px 1px 2px black;
+}
+
+#loser-symbol {
+  font-size: 50rem;
+  color: rgb(198, 64, 56);
+}
+
+
+.show-results {
+  opacity: 1;
+  left: 19vw;
+}
+
+#top-five-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+  border: 1px solid black;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#you-won-msg {
+  font-size: 2.2rem;
+  font-weight: bold;
+  font-family: 'Delius Unicase', cursive;
+}
+
+#top-five-heading {
+  font-size: 1.5rem;
+  color: #ff6402;
+  font-weight: bold;
+  font-family: 'Delius Unicase', cursive;
+}
+
+#winners-board {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 63%;
+  padding: 10px 50px 10px 5px;
+}
+
+#win-time span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: 'Delius Unicase', cursive;
+  color: #ff6402;
+}
+
+.placing {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.3rem;
+  width: 100%;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.placing span {
+  color: #b31fc9;
+  margin: 0 8px;
+}
