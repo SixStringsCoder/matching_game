@@ -29,7 +29,7 @@
         <p id="win-time"></p>
 
         <!-- Play Again Button for Modal Window -->
-        <div class="btn">
+        <div class="btn" id="play-again-container">
           <button class="play-again-btn">Play Again</button>
         </div>
 
@@ -52,15 +52,15 @@
 
       <!-- Time-Score-Strikes Panel -->
       <section id="time-strikes-score">
-        <div class="ctrl-container">
+        <div class="time-container">
           <h3 class="ctrl-headers">Timer</h3>
           <p id="time">0:0:0</p>
         </div>
-        <div class="ctrl-container">
+        <div class="score-container">
           <h3 class="ctrl-headers" id="scorehead">Score</h3>
           <p id="score">0</p>
         </div>
-        <div class="ctrl-container">
+        <div class="strikes-container">
           <h3 class="ctrl-headers">Strikes</h3>
           <p id="strikes">0</p>
         </div>
@@ -69,7 +69,7 @@
       <!-- Select Content Menu -->
       <div id="menu-container">
         <select id="menu" name="content-menu" autofocus>
-          <option disabled selected>Select Words</option>
+          <option disabled selected>Start here</option>
           <option value="fruit">Fruit</option>
           <option value="animals">Animals</option>
           <option value="spanish">Spanish</option>
@@ -78,7 +78,7 @@
       </div>
 
       <!-- Play Button -->
-      <div class="btn">
+      <div class="btn" id="play-reset-container">
         <button class="play-btn">Play</button>
         <button class="reset-btn hide">Reset</button>
       </div>
@@ -91,7 +91,7 @@
 
     </main>
     <footer>
-      &copy;2018SteveHanlon
+      <p>&copy;2018SteveHanlon</p>
     </footer>
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"

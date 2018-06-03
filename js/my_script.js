@@ -182,7 +182,7 @@ const makeGameBoard = (someList) => {
 ============================================*/
 const timeHandler = () => {
   return timerGoing ? (
-    timer = setInterval(function(){ timeCounter() }, 100)
+    timer = setInterval(timeCounter, 100)
   ) : (
     clearInterval(timer)
   );
