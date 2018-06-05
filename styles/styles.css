@@ -63,7 +63,7 @@ main {
   width: 100%;
   /* margin: 0 0 40px 0; */
   padding: 3% 0;
-  min-height: 100vw;
+  min-height: 59vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -430,26 +430,33 @@ button:active {
 
 /* Desktops */
 @media screen and (min-width: 75rem) {
-  header,
+  header {
+    padding: 1%;
+    margin-bottom: 10px;
+  }
+
   footer {
     padding: 1%;
+    margin-top: 10px;
   }
 
   main {
+    grid-template: 5% 5% 5% 85% / repeat(2, 10%) 78% 2%;
     grid-template-areas:
-    ". menu menu board board board"
-    "timeStrScr timeStrScr board board board"
-    "playReset playReset board board board"
-    ". . . board board board";
+    "timeStrScr timeStrScr board board board ."
+    "menu menu board board board ."
+    "playReset playReset board board board ."
+    ". . board board board .";
   }
 
   #gameboard {
-    min-height: 55vw;
+    min-height: 43vw;
     padding: 0;
+
   }
 
   #time-strikes-score {
-    margin: 0
+    margin: 10px 0 0 6px;
   }
 
   #play-reset-container {
@@ -458,18 +465,27 @@ button:active {
 
   .square {
     width: 22%;
-    height: 200px;
+    height: 150px;
   }
 
   .card-cover {
-    height: 200px;
+    height: 150px;
   }
 
   .span-for-content {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   img {
-    width: 95%;
+    width: 90%;
+  }
+
+  .results {
+    height: 48%;
+  }
+
+  #loser-x {
+    top: 0;
+    left: 24%;
   }
 }
