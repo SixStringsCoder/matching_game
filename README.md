@@ -54,15 +54,16 @@ Make a _Memory Match_ game where all card pairs must be matched to win the game
   - Add Selector to pick different content arrays (i.e. fruit, animals, Spanish, etc.)
   - Change Content Array into and Content Object with keys representing topic arrays - use words only
   - Add SVG images to Content Array, use <img> tags and paths as the string values
+  - Make responsive design with CSS Grid
 
 _To-Do-List_
-  - Make responsive design with CSS Grid
+
+  - If no 'Words' are selected from Dropdown but Play is hit - show an Alert.
   - Add shake animation for wrong answer
-  - Add rotating animation for card selection
 
 
 #### Fixes
-  - Hit Play - Get some matching cards - Hit Reset - Matched cards still show - Should be hidden again.
+  - Hit Play - Then after clicking Reset, the matched cards still show. Hide all cards on Reset.
 
 
 #### Future features

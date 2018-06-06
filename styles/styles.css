@@ -354,7 +354,7 @@ button:active {
 --------------------------
 =========================*/
 
-/* Tablets */
+/* Tablets - target is Portrait mode */
 @media screen and (min-width: 47.9375rem) {
   main {
     grid-template-areas:
@@ -452,7 +452,6 @@ button:active {
   #gameboard {
     min-height: 43vw;
     padding: 0;
-
   }
 
   #time-strikes-score {
@@ -487,5 +486,93 @@ button:active {
   #loser-x {
     top: 0;
     left: 24%;
+  }
+}
+
+/* iPad Pro Landscape orientation */
+@media only screen and (orientation: landscape) and (min-width:1023px) {
+  header {
+    padding: 1%;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    padding: 1%;
+    margin-top: 10px;
+  }
+
+  main {
+    grid-template: 5% 5% 5% 85% / repeat(2, 11%) 78% 1%;
+    grid-template-areas:
+    "timeStrScr timeStrScr board board board ."
+    "menu menu board board board ."
+    "playReset playReset board board board ."
+    ". . board board board .";
+  }
+
+  #gameboard {
+    min-height: 56.5vw;
+  }
+
+  #time-strikes-score {
+    margin: 10px 0 0 6px;
+  }
+
+  #score, #strikes, #time {
+    font-size: 1.2rem;
+  }
+
+  #play-reset-container {
+    align-self: center;
+  }
+
+  .square {
+    width: 22%;
+    height: 150px;
+  }
+
+  .card-cover {
+    height: 150px;
+  }
+
+  .span-for-content {
+    font-size: 2rem;
+  }
+
+  img {
+    width: 80%;
+  }
+
+  .results {
+    height: 48%;
+  }
+
+  #loser-x {
+    top: 0;
+    left: 24%;
+  }
+}
+
+
+/* iPad Pro Landscape orientation */
+@media only screen and (orientation: landscape) and (min-width:1300px) {
+  #gameboard {
+    min-height: 64vw;
+  }
+
+  .square {
+    height: 200px;
+  }
+
+  .card-cover {
+    height: 200px;
+  }
+
+  #score, #strikes, #time {
+    font-size: 2rem;
+  }
+
+  img {
+    width: 100%;
   }
 }
