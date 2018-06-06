@@ -125,10 +125,14 @@ $('#menu').on("change", function(event) {
 ============================================*/
 // Click Play Button to reset values and trigger Shuffle
 $('.play-btn').on('click', (event) => {
-  $('.play-btn').addClass('hide'); // hides Play button
-  $('.reset-btn').removeClass('hide'); // shows Reset button
-  resetGame();
-  shuffle(selectFromMenu); // shuffles content, makes gameboard and starts timer
+    if (selectFromMenu == undefined) {
+      alert('Use the START HERE menu to select a word bank. Then click PLAY.');
+    } else {
+      $('.play-btn').addClass('hide'); // hides Play button
+      $('.reset-btn').removeClass('hide'); // shows Reset button
+      resetGame();
+      shuffle(selectFromMenu); // shuffles content, makes gameboard and starts timer
+    }
 });
 
 $('.reset-btn').on('click', (event) => {
