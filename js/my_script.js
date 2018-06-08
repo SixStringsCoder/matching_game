@@ -76,6 +76,24 @@ const content = {
     ["<img src='./images/apple.svg' />", "match7"],
     ["<img src='./images/orange.svg' />", "match8"],
     ["<img src='./images/orange.svg' />", "match8"]
+  ],
+  animal_sounds: [
+    ["cow", "match1"],
+    ["<img id='cow' src='./images/audio_file.svg' />", "match1"],
+    ["duck", "match2"],
+    ["<img id='duck' src='./images/audio_file.svg' />", "match2"],
+    ["elephant", "match3"],
+    ["<img id='elephant' src='./images/audio_file.svg' />", "match3"],
+    ["goat", "match4"],
+    ["<img id='goat' src='./images/audio_file.svg' />", "match4"],
+    ["hawk", "match5"],
+    ["<img id='hawk' src='./images/audio_file.svg' />", "match5"],
+    ["horse","match6"],
+    ["<img id='horse' src='./images/audio_file.svg' />","match6" ],
+    ["rooster", "match7"],
+    ["<img id='rooster' src='./images/audio_file.svg' />", "match7"],
+    ["sheep", "match8"],
+    ["<img id='sheep' src='./images/audio_file.svg' />", "match8"]
   ]
 };
 
@@ -100,7 +118,17 @@ const gameAudio = {
     wrongAnswer: new Audio('audio/wrong.mp3'),
     aboutToLose: new Audio('audio/last_wrong.mp3'),
     winningSound: new Audio('audio/winner.mp3'),
-    losingSound: new Audio('audio/loser.mp3')
+    losingSound: new Audio('audio/loser.mp3'),
+    animals: {
+      cow: new Audio('audio/animals/cow.mp3'),
+      duck: new Audio('audio/animals/duck.mp3'),
+      elephant: new Audio('audio/animals/elephant.mp3'),
+      goat: new Audio('audio/animals/goat.mp3'),
+      hawk: new Audio('audio/animals/hawk.mp3'),
+      horse: new Audio('audio/animals/horse.mp3'),
+      rooster: new Audio('audio/animals/rooster.mp3'),
+      sheep: new Audio('audio/animals/sheep.mp3')
+    }
 };
 
 const playClickCard = () => gameAudio.clickCard.play();
@@ -108,7 +136,7 @@ const playRightAnswer = () => gameAudio.rightAnswer.play();
 const playWrongAnswer = () => strikes != 9 ? gameAudio.wrongAnswer.play() : gameAudio.aboutToLose.play();
 const playWinnerSound = () => gameAudio.winningSound.play();
 const playLoserSound = () => gameAudio.losingSound.play();
-
+const playAnimalSound = (animal) => gameAudio.animals[`${animal}`].play();
 
 /*============================================
           Select Menu for Content
@@ -220,6 +248,11 @@ const stopTimer = () => {
 const handlePicks = (event) => {
   playClickCard(); // audio effect
   $(event.target).addClass('card-show');
+
+  // let animal = event.target.nextElementSibling.children["0"].firstChild.id;
+  playAnimalSound(animal);
+  // console.log(event.target.nextElementSibling.children["0"].firstChild.id);
+
   let pick = $(event.target).siblings("div").attr('class');
   // Disable the card picked so it can't be clicked twice
   $(event.target).prop( "disabled", true );
@@ -251,6 +284,7 @@ const makeCardsInactive = (cardPicksArr) => {
 const emptyCardPicks = arr => cardPicks.splice(0, cardPicks.length)
 
 const decideMatch = (cardPicksArr) => {
+    console.log(cardPicksArr);
     if (cardPicksArr[0] === cardPicksArr[1]) {
       makeCardsInactive(cardPicks);
       changeScore();
