@@ -136,7 +136,13 @@ const playRightAnswer = () => gameAudio.rightAnswer.play();
 const playWrongAnswer = () => strikes != 9 ? gameAudio.wrongAnswer.play() : gameAudio.aboutToLose.play();
 const playWinnerSound = () => gameAudio.winningSound.play();
 const playLoserSound = () => gameAudio.losingSound.play();
-const playAnimalSound = (animal) => gameAudio.animals[`${animal}`].play();
+const handleAudio = (event) => {
+  (event === undefined || event === "") ?
+    gameAudio.clickCard.play()
+    :
+    gameAudio.animals[`${event}`].play()
+}
+
 
 /*============================================
           Select Menu for Content
@@ -144,7 +150,6 @@ const playAnimalSound = (animal) => gameAudio.animals[`${animal}`].play();
 
 $('#menu').on("change", function(event) {
   selectFromMenu = content[event.target.value];
-  console.log(selectFromMenu);
 });
 
 
@@ -246,13 +251,11 @@ const stopTimer = () => {
 ============================================*/
 // Event handler to catalog card picks in array 'cardPicks'
 const handlePicks = (event) => {
-  playClickCard(); // audio effect
+  console.log(event);
+  // Long targeting needed for when game matches 'word' with 'sound'
+  handleAudio(event.target.nextElementSibling.children[0].firstChild.id);
+
   $(event.target).addClass('card-show');
-
-  // let animal = event.target.nextElementSibling.children["0"].firstChild.id;
-  playAnimalSound(animal);
-  // console.log(event.target.nextElementSibling.children["0"].firstChild.id);
-
   let pick = $(event.target).siblings("div").attr('class');
   // Disable the card picked so it can't be clicked twice
   $(event.target).prop( "disabled", true );
@@ -284,7 +287,6 @@ const makeCardsInactive = (cardPicksArr) => {
 const emptyCardPicks = arr => cardPicks.splice(0, cardPicks.length)
 
 const decideMatch = (cardPicksArr) => {
-    console.log(cardPicksArr);
     if (cardPicksArr[0] === cardPicksArr[1]) {
       makeCardsInactive(cardPicks);
       changeScore();

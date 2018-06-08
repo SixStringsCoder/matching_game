@@ -56,10 +56,10 @@ Make a _Memory Match_ game where all card pairs must be matched to win the game
   - Add SVG images to Content Array, use <img> tags and paths as the string values
   - Make responsive design with CSS Grid
   - Show an Alert if no 'Word' bank is selected from Dropdown menu but Play is hit anyway.
+  - Add 'sound matches pic' version; (use generic icon for sound for visual)
 
 _To-Do-List_
   - Add shake animation for wrong answer
-  - Add sounds vs pics; use generic icon for sound for visual; subarray could be [ 'soundFile.mp3', 'match1', 'iconLink.jpg']
 
 
 #### Fixes
@@ -68,5 +68,4 @@ _To-Do-List_
 
 #### Future features
  - word vs pic
- - word vs. sound
  - pic vs. sound
