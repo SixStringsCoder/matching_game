@@ -428,69 +428,9 @@ button:active {
 }
 
 
-/* Desktops */
-@media screen and (min-width: 75rem) {
-  header {
-    padding: 1%;
-    margin-bottom: 10px;
-  }
-
-  footer {
-    padding: 1%;
-    margin-top: 10px;
-  }
-
-  main {
-    grid-template: 5% 5% 5% 85% / repeat(2, 10%) 78% 2%;
-    grid-template-areas:
-    "timeStrScr timeStrScr board board board ."
-    "menu menu board board board ."
-    "playReset playReset board board board ."
-    ". . board board board .";
-  }
-
-  #gameboard {
-    min-height: 43vw;
-    padding: 0;
-  }
-
-  #time-strikes-score {
-    margin: 10px 0 0 6px;
-  }
-
-  #play-reset-container {
-    align-self: center;
-  }
-
-  .square {
-    width: 22%;
-    height: 150px;
-  }
-
-  .card-cover {
-    height: 150px;
-  }
-
-  .span-for-content {
-    font-size: 2rem;
-  }
-
-  img {
-    width: 90%;
-  }
-
-  .results {
-    height: 48%;
-  }
-
-  #loser-x {
-    top: 0;
-    left: 24%;
-  }
-}
 
 /* iPad Pro Landscape orientation */
-@media only screen and (orientation: landscape) and (min-width:1023px) {
+/* @media only screen and (min-width: 63rem) and (orientation: landscape){
   header {
     padding: 1%;
     margin-bottom: 10px;
@@ -551,11 +491,11 @@ button:active {
     top: 0;
     left: 24%;
   }
-}
+} */
 
 
 /* iPad Pro Landscape orientation */
-@media only screen and (orientation: landscape) and (min-width:1300px) {
+/* @media only screen and (min-width: 81.25rem) and (orientation: landscape) {
   #gameboard {
     min-height: 64vw;
   }
@@ -574,5 +514,67 @@ button:active {
 
   img {
     width: 100%;
+  }
+} */
+
+/* Desktops */
+@media screen and (min-width: 75rem) {
+  header {
+    padding: 1%;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    padding: 1%;
+    margin-top: 10px;
+  }
+
+  main {
+    grid-template: 5% 5% 5% 85% / repeat(2, 10%) 78% 2%;
+    grid-template-areas:
+    "timeStrScr timeStrScr board board board ."
+    "menu menu board board board ."
+    "playReset playReset board board board ."
+    ". . board board board .";
+  }
+
+  #gameboard {
+    min-height: 43vw;
+    padding: 0;
+  }
+
+  #time-strikes-score {
+    margin: 10px 0 0 6px;
+  }
+
+  #play-reset-container {
+    align-self: center;
+  }
+
+  .square {
+    width: 22%;
+    height: 150px;
+  }
+
+  .card-cover {
+    height: 150px;
+  }
+
+  .span-for-content {
+    font-size: 2rem;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .results {
+    height: 48%;
+  }
+
+  #loser-x {
+    top: 0;
+    left: 24%;
   }
 }

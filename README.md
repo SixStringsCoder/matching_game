@@ -63,9 +63,10 @@ _To-Do-List_
 
 
 #### Fixes
-  - Hit Play - Then after clicking Reset, the matched cards still show. Hide all cards on Reset.
+  - Hide all cards on Reset. (Hit Play - Then after clicking Reset, the matched cards still show.) 
 
 
 #### Future features
  - word vs pic
  - pic vs. sound
+ - custom word content (use text boxes for user to make custom content of word and its match)

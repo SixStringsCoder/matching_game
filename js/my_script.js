@@ -77,6 +77,24 @@ const content = {
     ["<img src='./images/orange.svg' />", "match8"],
     ["<img src='./images/orange.svg' />", "match8"]
   ],
+  als_pics: [
+    ["Aa", "match1"],
+    ["<img src='./images/asl_pics/a.svg' />", "match1"],
+    ["Gg", "match2"],
+    ["<img src='./images/asl_pics/e.svg' />", "match2"],
+    ["Hh", "match3"],
+    ["<img src='./images/asl_pics/g.svg' />", "match3"],
+    ["Jj", "match4"],
+    ["<img src='./images/asl_pics/j.svg' />", "match4"],
+    ["Nn", "match5"],
+    ["<img src='./images/asl_pics/m.svg' />", "match5"],
+    ["Ss","match6" ],
+    ["<img src='./images/asl_pics/s.svg' />","match6" ],
+    ["Tt", "match7"],
+    ["<img src='./images/asl_pics/t.svg' />", "match7"],
+    ["Uu", "match8"],
+    ["<img src='./images/asl_pics/y.svg' />", "match8"]
+  ],
   animal_sounds: [
     ["cow", "match1"],
     ["<img id='cow' src='./images/audio_file.svg' />", "match1"],
@@ -94,7 +112,25 @@ const content = {
     ["<img id='rooster' src='./images/audio_file.svg' />", "match7"],
     ["sheep", "match8"],
     ["<img id='sheep' src='./images/audio_file.svg' />", "match8"]
-  ]
+  ],
+  animalPics_sounds: [
+    ["<img src='./images/animal_pics/cow.svg' />", "match1"],
+    ["<img id='cow' src='./images/audio_file.svg' />", "match1"],
+    ["<img src='./images/animal_pics/duck.png' />", "match2"],
+    ["<img id='duck' src='./images/audio_file.svg' />", "match2"],
+    ["<img src='./images/animal_pics/elephant.svg' />", "match3"],
+    ["<img id='elephant' src='./images/audio_file.svg' />", "match3"],
+    ["<img src='./images/animal_pics/goat.svg' />", "match4"],
+    ["<img id='goat' src='./images/audio_file.svg' />", "match4"],
+    ["<img src='./images/animal_pics/hawk.png' />", "match5"],
+    ["<img id='hawk' src='./images/audio_file.svg' />", "match5"],
+    ["<img src='./images/animal_pics/horse.png' />","match6"],
+    ["<img id='horse' src='./images/audio_file.svg' />","match6" ],
+    ["<img src='./images/animal_pics/rooster.svg' />", "match7"],
+    ["<img id='rooster' src='./images/audio_file.svg' />", "match7"],
+    ["<img src='./images/animal_pics/sheep.png' />", "match8"],
+    ["<img id='sheep' src='./images/audio_file.svg' />", "match8"]
+  ],
 };
 
 let selectFromMenu;
