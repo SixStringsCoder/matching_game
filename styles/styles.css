@@ -271,6 +271,7 @@ button:active {
   padding: 20px 0;
   background-color: #ffd26b;
   border-radius: 25px;
+  box-shadow: 2px 1px 15px black;
   opacity: 0;
   transition: all .5s;
 }
@@ -291,7 +292,6 @@ button:active {
 
 .show-results {
   opacity: 1;
-  box-shadow: 2px 1px 15px black;
   left: 9vw;
 }
 
@@ -565,8 +565,8 @@ button:active {
   }
 
   img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 80%;
+    max-height: 80%;
   }
 
   .results {
