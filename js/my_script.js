@@ -164,7 +164,7 @@ const gameAudio = {
       horse: new Audio('audio/animals/horse.mp3'),
       frog: new Audio('audio/animals/frog.mp3'),
       sheep: new Audio('audio/animals/sheep.mp3'),
-      wolf: new Audio('audio/animals.sheep.mp3')
+      wolf: new Audio('audio/animals.wolf.mp3')
     }
 };
 
@@ -383,22 +383,17 @@ const showLoserX = () => {
 /*============================================
               TOP 5 WINNERS BOARD
 ============================================*/
-const judgeScore = (score) => {
-  console.log(`This is the new score: ${score}`)
-  // let topscore = topFiveWinners.sort((a, b) => b - a); // descending order
-  let bestScore = parseInt(localStorage.getItem("bestScore"))
-  console.log("This is the old best score:" + bestScore)
+const judgeScore = (time) => {
+  let bestTime = parseInt(localStorage.getItem("bestTime"))
 
-  if (score < bestScore) {
-    console.log(score + 'vs' + bestScore);
-    // Store new score
-    localStorage.setItem("bestScore", score);
+  if (!bestTime || time < bestTime) {
+    console.log(time + 'vs' + bestTime);
+    // Store new scores
+    localStorage.setItem("bestTime", time);
     // Display new best score
-    $('#first').html(`<span>${score} seconds</span>`);
-    $('#second').html(`<span>${bestScore} seconds</span>`);
+    $('#first').html(`<span>${time} seconds`);
   } else {
-    $('#first').html(`<span>${bestScore} seconds</span>`);
-    $('#second').html(`<span>${score} seconds</span>`);
+    $('#first').html(`<span>${bestTime} seconds</span>`);
   }
 };
 
