@@ -139,6 +139,7 @@ let centiseconds = 00;
 let seconds = 0;
 let minutes = 0;
 let timerGoing = true;
+let bestTimes = [];
 
 let score = 0;
 let strikes = 0;
@@ -288,7 +289,7 @@ const stopTimer = () => {
 ============================================*/
 // Event handler to catalog card picks in array 'cardPicks'
 const handlePicks = (event) => {
-  console.log(event);
+  // console.log(event);
   // Long targeting needed for when game matches 'word' with 'sound'
   handleAudio(event.target.nextElementSibling.children[0].firstChild.id);
 
@@ -347,11 +348,10 @@ $("#gameboard").on('click', 'div.card-cover', handlePicks);
               WINNING and LOSING
 ============================================*/
 const wonGame = () => {
+  stopTimer();
   playWinnerSound();
   // Disable game board
   $('#gameboard, div.card-cover').prop( "disabled", true );
-  // stop clock
-  stopTimer();
   // show modal window with totals + Play Again button;
   judgeScore(seconds, centiseconds);
   showResults();
@@ -359,7 +359,7 @@ const wonGame = () => {
 
 const showResults = () => {
   $('.results').addClass('show-results');
-  $('#win-time').html(`You did it in: <span>${seconds}.${centiseconds} seconds</span>`);
+  $('#win-time').html(`Your Time: <span>${seconds}.${centiseconds} seconds</span>`);
   $('main').on('click', () => $('.results').removeClass('show-results'));
 };
 
@@ -384,34 +384,58 @@ const showLoserX = () => {
               TOP 5 WINNERS BOARD
 ============================================*/
 const judgeScore = (seconds, centiseconds) => {
-  let bestTimes = [];
   let time = parseFloat(`${seconds}.${centiseconds}`);
   const sortTimes = (a, b) => a - b
 
-  // If LocalStorage hasn't been initiated yet, create bestTimes key/value
+  // Would be 'Null' if bestTimes hasn't been created in LocalStorage yet
   if (localStorage.getItem("bestTimes") == null) {
-    bestTimes.push(time);
-    localStorage.setItem("bestTimes", JSON.stringify(bestTimes));
-    $('#first').html(`<span>${bestTimes[0]} seconds`);
+    bestTimes.push(time); // add to global array 'bestTimes'
+    localStorage.setItem("bestTimes", JSON.stringify(bestTimes)); // add to LocalStorage
+    displayTopTimes(bestTimes.length)
   } else if (localStorage.getItem("bestTimes")) {
     bestTimes = JSON.parse(localStorage.getItem("bestTimes"));
         if (bestTimes.length != 5) {
           bestTimes.push(time);
-          bestTimes.sort(sortTimes); // Sort times fastest to slowest time
+          bestTimes.sort(sortTimes); // Sorted fastest to slowest time
           localStorage.setItem("bestTimes", JSON.stringify(bestTimes));
         } else if (bestTimes.length === 5 && time < bestTimes[bestTimes.length-1]) {
-            bestTimes.splice(bestTimes.length-1, 1, time);
-            bestTimes.sort(sortTimes); // Sort times fastest to slowest time
+            bestTimes.splice(bestTimes.length-1, 1, time); // Replaces last array element
+            bestTimes.sort(sortTimes);
             localStorage.setItem("bestTimes", JSON.stringify(bestTimes));
         }
-    // Display results
-    $('#first').html(`<span>${bestTimes[0]} seconds`);
-    $('#second').html(`<span>${bestTimes[1]} seconds`);
-    $('#third').html(`<span>${bestTimes[2]} seconds`);
-    $('#fourth').html(`<span>${bestTimes[3]} seconds`);
-    $('#fifth').html(`<span>${bestTimes[4]} seconds`);
+    displayTopTimes(bestTimes.length)
   }
 };
+
+const displayTopTimes = (scoresArrayLength) => {
+  switch(scoresArrayLength) {
+    case 2:
+      $('#first').html(`<span>${bestTimes[0]} seconds`);
+      $('#second').html(`<span>${bestTimes[1]} seconds`);
+      break;
+    case 3:
+      $('#first').html(`<span>${bestTimes[0]} seconds`);
+      $('#second').html(`<span>${bestTimes[1]} seconds`);
+      $('#third').html(`<span>${bestTimes[2]} seconds`);
+      break;
+    case 4:
+      $('#first').html(`<span>${bestTimes[0]} seconds`);
+      $('#second').html(`<span>${bestTimes[1]} seconds`);
+      $('#third').html(`<span>${bestTimes[2]} seconds`);
+      $('#fourth').html(`<span>${bestTimes[3]} seconds`);
+      break;
+    case 5:
+      $('#first').html(`<span>${bestTimes[0]} seconds`);
+      $('#second').html(`<span>${bestTimes[1]} seconds`);
+      $('#third').html(`<span>${bestTimes[2]} seconds`);
+      $('#fourth').html(`<span>${bestTimes[3]} seconds`);
+      $('#fifth').html(`<span>${bestTimes[4]} seconds`);
+      break;
+    default:
+      $('#first').html(`<span>${bestTimes[0]} seconds`);
+      break;
+  }
+}
 
 
 /*============================================

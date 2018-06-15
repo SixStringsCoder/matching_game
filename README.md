@@ -48,7 +48,8 @@ Make a _Memory Match_ game where all card pairs must be matched to win the game
   - Add sounds for action
   - Add window to show end results for winners
   - Refactor 'content' from array of strings to array of subarrays with strings allowing for more flexibility of content (word vs. word, word vs. picture, word vs. html symbol, word vs. audio)
-  - Add Top Score area to modal window; add functionality using localStorage to store a score
+  - Add Top Five Times area to modal window;
+  - Add Top Five Times functionality using localStorage to set/get the Best Times
   - Add loser X symbol after losing
   - Make PLAY button turn to a RESET button during play
   - Add Selector to pick different content arrays (i.e. fruit, animals, Spanish, etc.)
@@ -63,10 +64,8 @@ _To-Do-List_
 
 
 #### Fixes
-  - Hide all cards on Reset. (Hit Play - Then after clicking Reset, the matched cards still show.) 
+  - Hide all cards on Reset. (Hit Play - Then after clicking Reset, the matched cards still show.)
 
 
 #### Future features
- - word vs pic
- - pic vs. sound
  - custom word content (use text boxes for user to make custom content of word and its match)
