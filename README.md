@@ -1,6 +1,15 @@
 ### Proposal
 Make a _Memory Match_ game where all card pairs must be matched to win the game
 
+**Tablet Screen**
+![tablet size screen](images/readme_pics/tablet.png)
+
+**Small Screen**
+![small screen](images/readme_pics/small_screen.png)
+
+**Desktop Screen**
+![desktop screen](images/readme_pics/desktop.png)
+
   #### Game Behavior
   - present it as a grid of 4 x 4 (Desktop) and 3 x 6 (small mobile) of 8 hidden card pairs
   - randomly shuffle the cards
@@ -30,10 +39,8 @@ Make a _Memory Match_ game where all card pairs must be matched to win the game
 
   #### UX Notes
 - CSS Grid to make whole page responsive layout
--
 
-  #### Workflow as it happened:
-
+  #### Workflow
   - Start Read Me and Proposal
   - Make sample array of vocabulary words
   - Make function to load array words onto DOM in a grid of squares
@@ -59,13 +66,13 @@ Make a _Memory Match_ game where all card pairs must be matched to win the game
   - Show an Alert if no 'Word' bank is selected from Dropdown menu but Play is hit anyway.
   - Add 'sound matches pic' version; (use generic icon for sound for visual)
 
-_To-Do-List_
-  - Add shake animation for wrong answer
-
 
 #### Fixes
   - Hide all cards on Reset. (Hit Play - Then after clicking Reset, the matched cards still show.)
+  - Timer doesn't stop immediately after game is won.
 
 
 #### Future features
- - custom word content (use text boxes for user to make custom content of word and its match)
+ - custom word content (use a ``<form>`` for user to make custom content of words and their matches) and
+    add it to players ``<select>`` menu with button to edit it if it's selected.
+ - store that custom content in browser's ``LocalStorage`` and add to players ``<select>`` menu

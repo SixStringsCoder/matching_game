@@ -147,10 +147,6 @@ img {
   font-family: 'Delius Unicase', cursive;
 }
 
-/* #scorehead {
-  color: rgba(255, 125, 0, 1);
-} */
-
 .time-container {
   grid-area: time;
 }
@@ -195,8 +191,6 @@ img {
   appearance: none;
   border-bottom: 1px solid #757575;
 }
-
-
 
 /* Start Playing Game Button */
 #play-reset-container {
@@ -379,10 +373,18 @@ button:active {
 
   .span-for-content {
     font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   img {
     width: 88%;
+  }
+
+  .sign-lang-img {
+    width: 60%;
+    border: 2.5px solid black;
   }
 
   #menu-container {

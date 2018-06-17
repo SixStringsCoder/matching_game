@@ -79,21 +79,21 @@ const content = {
   ],
   als_pics: [
     ["actor", "match1"],
-    ["<img src='./images/asl_pics/actor.gif' />", "match1"],
-    ["basketball", "match2"],
-    ["<img src='./images/asl_pics/basketball.gif' />", "match2"],
-    ["book", "match3"],
-    ["<img src='./images/asl_pics/book.gif' />", "match3"],
-    ["child", "match4"],
-    ["<img src='./images/asl_pics/child.gif' />", "match4"],
-    ["door", "match5"],
-    ["<img src='./images/asl_pics/door.gif' />", "match5"],
-    ["fish","match6" ],
-    ["<img src='./images/asl_pics/fish.gif' />","match6" ],
+    ["<img class='sign-lang-img' src='./images/asl_pics/actor.gif' />", "match1"],
+    ["artist", "match2"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/artist.gif' />", "match2"],
+    ["ball", "match3"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/ball.gif' />", "match3"],
+    ["deaf", "match4"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/deaf.gif' />", "match4"],
+    ["basketball", "match5"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/basketball.gif' />", "match5"],
+    ["talk","match6" ],
+    ["<img class='sign-lang-img' src='./images/asl_pics/talk.gif' />","match6" ],
     ["music", "match7"],
-    ["<img src='./images/asl_pics/music.gif' />", "match7"],
-    ["shirt", "match8"],
-    ["<img src='./images/asl_pics/shirt.gif' />", "match8"]
+    ["<img class='sign-lang-img' src='./images/asl_pics/music.gif' />", "match7"],
+    ["play", "match8"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/play.gif' />", "match8"]
   ],
   animal_sounds: [
     ["cow", "match1"],
@@ -157,6 +157,7 @@ const gameAudio = {
     winningSound: new Audio('audio/winner.mp3'),
     losingSound: new Audio('audio/loser.mp3'),
     animals: {
+      chicken: new Audio('audio/animals/chicken.mp3'),
       cow: new Audio('audio/animals/cow.mp3'),
       duck: new Audio('audio/animals/duck.mp3'),
       elephant: new Audio('audio/animals/elephant.mp3'),
@@ -165,7 +166,7 @@ const gameAudio = {
       horse: new Audio('audio/animals/horse.mp3'),
       frog: new Audio('audio/animals/frog.mp3'),
       sheep: new Audio('audio/animals/sheep.mp3'),
-      wolf: new Audio('audio/animals.wolf.mp3')
+      wolf: new Audio('audio/animals.wolf.mp3'),
     }
 };
 
