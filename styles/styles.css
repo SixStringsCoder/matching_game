@@ -335,9 +335,9 @@ button:active {
 
 .placing {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   font-size: 1.5rem;
-  /* width: 180px; */
+  width: 100%;
   line-height: 1.5;
   font-weight: bold;
 }
