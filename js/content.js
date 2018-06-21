@@ -1,7 +1,7 @@
 /*============================================
                   CONTENT
 ============================================*/
-export const content = {
+const content = {
   fruit: [
     ["strawberry", "match1"],
     ["strawberry", "match1"],
@@ -73,5 +73,59 @@ export const content = {
     ["<img src='./images/apple.svg' />", "match7"],
     ["<img src='./images/orange.svg' />", "match8"],
     ["<img src='./images/orange.svg' />", "match8"]
-  ]
+  ],
+  als_pics: [
+    ["actor", "match1"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/actor.gif' />", "match1"],
+    ["artist", "match2"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/artist.gif' />", "match2"],
+    ["ball", "match3"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/ball.gif' />", "match3"],
+    ["deaf", "match4"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/deaf.gif' />", "match4"],
+    ["basketball", "match5"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/basketball.gif' />", "match5"],
+    ["talk","match6" ],
+    ["<img class='sign-lang-img' src='./images/asl_pics/talk.gif' />","match6" ],
+    ["music", "match7"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/music.gif' />", "match7"],
+    ["play", "match8"],
+    ["<img class='sign-lang-img' src='./images/asl_pics/play.gif' />", "match8"]
+  ],
+  animal_sounds: [
+    ["cow", "match1"],
+    ["<img id='cow' src='./images/audio_file.svg' />", "match1"],
+    ["duck", "match2"],
+    ["<img id='duck' src='./images/audio_file.svg' />", "match2"],
+    ["elephant", "match3"],
+    ["<img id='elephant' src='./images/audio_file.svg' />", "match3"],
+    ["goat", "match4"],
+    ["<img id='goat' src='./images/audio_file.svg' />", "match4"],
+    ["dog", "match5"],
+    ["<img id='dog' src='./images/audio_file.svg' />", "match5"],
+    ["horse","match6"],
+    ["<img id='horse' src='./images/audio_file.svg' />","match6" ],
+    ["frog", "match7"],
+    ["<img id='frog' src='./images/audio_file.svg' />", "match7"],
+    ["sheep", "match8"],
+    ["<img id='sheep' src='./images/audio_file.svg' />", "match8"]
+  ],
+  animalPics_sounds: [
+    ["<img src='./images/animal_pics/cow.svg' />", "match1"],
+    ["<img id='cow' src='./images/audio_file.svg' />", "match1"],
+    ["<img src='./images/animal_pics/duck.svg' />", "match2"],
+    ["<img id='duck' src='./images/audio_file.svg' />", "match2"],
+    ["<img src='./images/animal_pics/elephant.svg' />", "match3"],
+    ["<img id='elephant' src='./images/audio_file.svg' />", "match3"],
+    ["<img src='./images/animal_pics/frog.svg' />", "match4"],
+    ["<img id='frog' src='./images/audio_file.svg' />", "match4"],
+    ["<img src='./images/animal_pics/chicken.svg' />", "match5"],
+    ["<img id='chicken' src='./images/audio_file.svg' />", "match5"],
+    ["<img src='./images/animal_pics/horse.svg' />","match6"],
+    ["<img id='horse' src='./images/audio_file.svg' />","match6" ],
+    ["<img src='./images/animal_pics/dog.svg' />", "match7"],
+    ["<img id='dog' src='./images/audio_file.svg' />", "match7"],
+    ["<img src='./images/animal_pics/sheep.svg' />", "match8"],
+    ["<img id='sheep' src='./images/audio_file.svg' />", "match8"]
+  ],
 };

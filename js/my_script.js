@@ -1,6 +1,10 @@
 // Once modules are supported by browsers, it will be better to store content in separate js file
 // import content from './content';
 
+// fruit_pics from https://commons.wikimedia.org/
+// sign language anigifs from http://lifeprint.com/asl101/gifs-animated/
+// sound effects from Hollywood Premiere Edition licensed collection
+
 /*============================================
                   CONTENT
 ============================================*/
@@ -133,7 +137,11 @@ const content = {
   ],
 };
 
+/*============================================
+              Global Variables
+============================================*/
 let selectFromMenu;
+
 let timer;
 let centiseconds = 00;
 let seconds = 0;
@@ -147,7 +155,7 @@ let cardPicks = [];
 
 
 /*============================================
-          Audio Sound effects
+          Audio - Sound effects
 ============================================*/
 const gameAudio = {
     clickCard: new Audio('audio/click.mp3'),
@@ -470,4 +478,5 @@ const resetGame = () => {
   $('#score').html(score);
   $('#strikes').html(strikes);
   $('.results').removeClass('show-results');
+  $('.card-cover').removeClass('card-show');
 };

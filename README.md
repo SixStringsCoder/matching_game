@@ -68,7 +68,6 @@ Make a _Memory Match_ game where all card pairs must be matched to win the game
 
 
 #### Fixes
-  - Hide all cards on Reset. (Hit Play - Then after clicking Reset, the matched cards still show.)
   - Timer doesn't stop immediately after game is won.
 
 
