@@ -1,7 +1,7 @@
 /*============================================
                   CONTENT
 ============================================*/
-const content = {
+const Content = {
   fruit: [
     ["strawberry", "match1"],
     ["strawberry", "match1"],

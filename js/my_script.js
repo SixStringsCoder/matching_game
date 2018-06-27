@@ -1,5 +1,5 @@
 // Once modules are supported by browsers, it will be better to store content in separate js file
-// import content from './content';
+// import { Content } from './content';
 
 // fruit_pics from https://commons.wikimedia.org/
 // sign language anigifs from http://lifeprint.com/asl101/gifs-animated/
@@ -140,7 +140,7 @@ const content = {
 /*============================================
               Global Variables
 ============================================*/
-let selectFromMenu;
+let menuSelection;
 
 let timer;
 let centiseconds = 00;
@@ -195,7 +195,7 @@ const handleAudio = (event) => {
           Select Menu for Content
 ============================================*/
 $('#menu').on("change", function(event) {
-  selectFromMenu = content[event.target.value];
+  menuSelection = content[event.target.value];
 });
 
 
@@ -204,13 +204,13 @@ $('#menu').on("change", function(event) {
 ============================================*/
 // Click Play Button to reset values and trigger Shuffle
 $('.play-btn').on('click', (event) => {
-    if (selectFromMenu == undefined) {
+    if (menuSelection == undefined) {
       alert('Use the START HERE menu to select a word bank. Then click PLAY.');
     } else {
       $('.play-btn').addClass('hide'); // hides Play button
       $('.reset-btn').removeClass('hide'); // shows Reset button
       resetGame();
-      shuffle(selectFromMenu); // shuffles content, makes gameboard and starts timer
+      shuffle(menuSelection); // shuffles content, makes gameboard and starts timer
     }
 });
 
@@ -223,7 +223,7 @@ $('.reset-btn').on('click', (event) => {
 // Click Play Again Button on Modal Window
 $('.play-again-btn').on('click', (event) => {
   resetGame();
-  shuffle(selectFromMenu);
+  shuffle(menuSelection);
 });
 
 // Using Fisher-Yates method
@@ -245,11 +245,11 @@ function shuffle(array) {
 /*============================================
             Add Content to DOM
 ============================================*/
-const makeGameBoard = (someList) => {
+const makeGameBoard = (someContent) => {
     // Remove all contents from game board
     $('#gameboard').empty();
     // Populate game baord
-    someList.map((word, index) => {
+    someContent.map((word, index) => {
       $('#gameboard').append(
         `<div class="square">
           <div class="card-cover"></div>
@@ -373,14 +373,11 @@ const showResults = () => {
 };
 
 const lostGame = () => {
-  let xCounter = 0;
   playLoserSound();
   showLoserX();
   // Disable game board
   $('#gameboard, div.card-cover').prop( "disabled", true );
-  // stop clock;
   stopTimer();
-  // show modal window with totals and consolatioin message + Play Again button;
 };
 
 const showLoserX = () => {
@@ -471,12 +468,15 @@ const resetGame = () => {
   seconds = 0;
   minutes =  0;
   timerGoing = true;
+
   // Clear Interval so when button is clicked, the time doesn't count twice as fast
   clearInterval(timer);
-  // Reset DOM so time, score and strikes are at 0
+  // Reset DOM so time, score and strikes display 0s
   $('#time').html(`<span>${minutes}:${seconds}:${centiseconds}</span>`);
   $('#score').html(score);
   $('#strikes').html(strikes);
+  // Removes Winner Modal window
   $('.results').removeClass('show-results');
+  // Covers all uncovered cards
   $('.card-cover').removeClass('card-show');
 };
