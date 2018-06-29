@@ -1,39 +1,43 @@
-# Game: Brain Fart
+# Memory Match Game: Brain Fart
 
 ## Table of Contents
-- Acknowledgements
-- Maintainers
-- License
-- Summary
-- Scripts and Libraries
-- Programming Explanations
-- Proposal link for more details and sample UI
-- Workflow
-- Fixes
-- Future Features
+- [Acknowledgements](#acknowledgements)
+- [Maintainers](#maintain)
+- [License](#lic)
+- [Summary](#brain-fart-summary)
+- [Scripts and Libraries](#scripts-and-libraries)
+- [Programming Explanations](#programming-explanations)
+- [Proposal link for more details and sample UI](#project-proposal)
+- [Workflow](#workflow)
+- [Fixes](#fixes)
+- [Future Features](#future-features)
 
 --------------------------
 
-- Acknowledgements
+- <a id="acknowledgements">Acknowledgements</a>
    - fruit_pics from https://commons.wikimedia.org/
    - sign language anigifs from http://lifeprint.com/asl101/gifs-animated/
    - sound effects from Hollywood Premiere Edition licensed collection
 
-- [Maintainers] Steve Hanlon
-- [License] None
+- <a id="maintain">Maintainers</a> - Steve Hanlon
+- <a id="lic">License</a> - None
 
 
-**Brain Fart Summary** - *the memory match game for memories that stink*, came from a Google project challenge.  The memory match game had to cover the following rubric:
+### Brain Fart Summary  
+This project came from a Google project challenge.  The memory match game had to cover the following rubric:
 
 
-**Scripts and Libraries**: JavaScript ES2015 and jQuery 3.3.1
+#### Scripts and Libraries
+- JavaScript ES2015
+- jQuery 3.3.1
+- CSS Grid and Flexbox
 
 ### Programming Explanations
 
 1. **Create content and game board** -
   **The content** is stored in arrays. The arrays always consist of string values which represent words and at other times, links to picture files.
 
-  The game board is made by iterating through one of the content arrays and then appending each content element to a DOM element, which are styled with CSS into a grid of squares.
+  The game board is made by iterating through one of the content arrays and then appending each content element to a DOM element, which are then styled with CSS into a grid of squares.
   ```
   const makeGameBoard = (someList) => {
       // Remove all contents from game board
@@ -50,8 +54,8 @@
       timeHandler();
   };
   ```
-
-2. **Shuffle cards** -
+[Back to Table of Contents](#table-of-contents)
+2. **Shuffle cards**
 I used a pre-made function that implements the [Fisher-Yates method](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) of shuffling.  Calling this function also calls the function to make the game board.
 ```
 function shuffle(array) {
@@ -70,8 +74,8 @@ function shuffle(array) {
 ```
 
 3. **Event Handler to start the game (i.e. a PLAY button)**
-  - Triggers a callback function to shuffle cards which also
-  - Makes the game board which also
+  - Triggers a callback function to shuffle cards which also...
+  - Makes the game board which also...
   - Starts the Timer
 ```
 // Click Play Button to reset values and trigger Shuffle
@@ -96,7 +100,7 @@ $('.reset-btn').on('click', (event) => {
   resetGame(); // resets gameboard values BUT doesn't start Timer
 });
 ```
-
+[Back to Table of Contents](#table-of-contents)
 4. **Timer** -
 Part of the Google rubric was to add a timer. I wanted to add some excitement to the game so I added a _centisecond_ value so the numbers incremented faster.  The timer function is invoked every hundredth of a second by ```setInterval()``` and stopped with a ```clearInterval()``` function when a Global boolean variable ```timerGoing``` is assigned to false.
 ```
@@ -132,7 +136,7 @@ const stopTimer = () => {
   timeHandler();
 };
 ```
-
+[Back to Table of Contents](#table-of-contents)
 5. **Score and Strikes**   I dealt with these two together because they dictate when the game is lost and won.  I first started with an Event Listener and Handler to handle the card clicked on by the player.
 
 The ```<div>``` with a class of ```.card-cover``` is what the player is actually clicking on but it gets added to the DOM after the PLAY button is clicked.  IN other words, the DOM doesn't start with these elements; they get added via ```.html()```.  So I need to add that as the 2nd parameter of the ```on()``` method which is a "selector" parameter.  It wouldn't work otherwise.  Then the callback function ```handlePicks``` is called.
@@ -184,7 +188,7 @@ const decideMatch = (cardPicksArr) => {
 ```
 
 This sequence of events plays out until the ```score``` variable equals 80 (i.e. 8 correct answers * 10 points each) or the ```strikes``` variable equals 10 (10 strikes and you're out!).
-
+[Back to Table of Contents](#table-of-contents)
 **Winner** -
 It's a function invoking a sequence of self-explanatory functions:  ```stopTimer()```, ```playWinnerSound()```, disable the game board with ```.prop```, ```judgeScore(seconds, centiseconds)```, then ```showResults()```.
 
@@ -287,7 +291,7 @@ const displayTopTimes = () => {
   }
 }
 ```
-
+[Back to Table of Contents](#table-of-contents)
 
 **Loser** - I wanted to add some effect if a person got 10 strikes and lost the game.  I opted for a sound effect with a blinking "X" as a visual effect.  The "X" is an HTML symbol ```&#10754;``` hard-coded in the HTML and the blinking is controlled with CSS and jQuery fade methods.
 
@@ -340,7 +344,7 @@ const resetGame = () => {
   $('.card-cover').removeClass('card-show');
 };
 ```
-
+[Back to Table of Contents](#table-of-contents)
 
 7. **Sound Effects** -
 The sound effects are added by instantiating several Audio objects.  I initialized and stored them in an object literal just to visually organize it.  The first 6 properties are sounds underscoring the game.  The ```animals``` property is actual content to match with words in the game.
@@ -384,8 +388,9 @@ const handleAudio = (event) => {
     gameAudio.animals[`${event}`].play()
 }
 ```
+[Back to Table of Contents](#table-of-contents)
 
-
+#### Project Proposal
 For more details and sample UI, please click on <a href="/proposal.md">Memory Match Proposal</a>.
 
 
@@ -425,3 +430,5 @@ For more details and sample UI, please click on <a href="/proposal.md">Memory Ma
  - custom word content (use a ``<form>`` for user to make custom content of words and their matches) and
     add it to players ``<select>`` menu with button to edit it if it's selected.
  - store that custom content in browser's ``LocalStorage`` and add to players ``<select>`` menu
+
+[Back to Table of Contents](#table-of-contents)
