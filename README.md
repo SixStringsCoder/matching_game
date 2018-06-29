@@ -7,10 +7,10 @@
 - [Summary](#brain-fart-summary)
 - [Scripts and Libraries](#scripts-and-libraries)
 - [Programming Explanations](#programming-explanations)
-- [Proposal link for more details and sample UI](#project-proposal)
+- [Proposal link for more details and sample UI](#proposal)
 - [Workflow](#workflow)
 - [Fixes](#fixes)
-- [Future Features](#future-features)
+- [Future Features](#features)
 
 --------------------------
 
@@ -54,7 +54,7 @@ This project came from a Google project challenge.  The memory match game had to
       timeHandler();
   };
   ```
-[Back to Table of Contents](#table-of-contents)
+
 2. **Shuffle cards**
 I used a pre-made function that implements the [Fisher-Yates method](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) of shuffling.  Calling this function also calls the function to make the game board.
 ```
@@ -100,7 +100,7 @@ $('.reset-btn').on('click', (event) => {
   resetGame(); // resets gameboard values BUT doesn't start Timer
 });
 ```
-[Back to Table of Contents](#table-of-contents)
+
 4. **Timer** -
 Part of the Google rubric was to add a timer. I wanted to add some excitement to the game so I added a _centisecond_ value so the numbers incremented faster.  The timer function is invoked every hundredth of a second by ```setInterval()``` and stopped with a ```clearInterval()``` function when a Global boolean variable ```timerGoing``` is assigned to false.
 ```
@@ -136,7 +136,7 @@ const stopTimer = () => {
   timeHandler();
 };
 ```
-[Back to Table of Contents](#table-of-contents)
+
 5. **Score and Strikes**   I dealt with these two together because they dictate when the game is lost and won.  I first started with an Event Listener and Handler to handle the card clicked on by the player.
 
 The ```<div>``` with a class of ```.card-cover``` is what the player is actually clicking on but it gets added to the DOM after the PLAY button is clicked.  IN other words, the DOM doesn't start with these elements; they get added via ```.html()```.  So I need to add that as the 2nd parameter of the ```on()``` method which is a "selector" parameter.  It wouldn't work otherwise.  Then the callback function ```handlePicks``` is called.
@@ -188,9 +188,9 @@ const decideMatch = (cardPicksArr) => {
 ```
 
 This sequence of events plays out until the ```score``` variable equals 80 (i.e. 8 correct answers * 10 points each) or the ```strikes``` variable equals 10 (10 strikes and you're out!).
-[Back to Table of Contents](#table-of-contents)
-**Winner** -
-It's a function invoking a sequence of self-explanatory functions:  ```stopTimer()```, ```playWinnerSound()```, disable the game board with ```.prop```, ```judgeScore(seconds, centiseconds)```, then ```showResults()```.
+
+**Winner**
+```wonGame()``` is a function expression which invokes a sequence of self-explanatory functions:  ```stopTimer()```, ```playWinnerSound()```, disable the game board with ```.prop```, ```judgeScore(seconds, centiseconds)```, then ```showResults()```.
 
 ```
 const wonGame = () => {
@@ -291,9 +291,10 @@ const displayTopTimes = () => {
   }
 }
 ```
-[Back to Table of Contents](#table-of-contents)
 
-**Loser** - I wanted to add some effect if a person got 10 strikes and lost the game.  I opted for a sound effect with a blinking "X" as a visual effect.  The "X" is an HTML symbol ```&#10754;``` hard-coded in the HTML and the blinking is controlled with CSS and jQuery fade methods.
+
+**Loser**
+I wanted to add some effect if a person got 10 strikes and lost the game.  I opted for a sound effect with a blinking "X" as a visual effect.  The "X" is an HTML symbol ```&#10754;``` hard-coded in the HTML and the blinking is controlled with CSS and jQuery fade methods.
 
 ```
 const lostGame = () => {
@@ -311,7 +312,7 @@ const showLoserX = () => {
 ```
 
 
-6. **Reset** -
+6. **Reset**
 Whether a person wins or loses, the RESET button near the game board when clicked invokes the ```resetGame()``` function expression.
 
 ```
@@ -344,10 +345,9 @@ const resetGame = () => {
   $('.card-cover').removeClass('card-show');
 };
 ```
-[Back to Table of Contents](#table-of-contents)
 
-7. **Sound Effects** -
-The sound effects are added by instantiating several Audio objects.  I initialized and stored them in an object literal just to visually organize it.  The first 6 properties are sounds underscoring the game.  The ```animals``` property is actual content to match with words in the game.
+7. **Sound Effects**
+The sound effects are added by instantiating several Audio objects.  I initialized and stored them in an object literal just to visually organize them.  The first 6 properties are sounds underscoring the game.  The ```animals``` property is actual game content that a player matches with words in the game.
 
 ```
 const gameAudio = {
@@ -388,14 +388,16 @@ const handleAudio = (event) => {
     gameAudio.animals[`${event}`].play()
 }
 ```
-[Back to Table of Contents](#table-of-contents)
 
-#### Project Proposal
+
+#### <a id="proposal">Project Proposal</a>
+
 For more details and sample UI, please click on <a href="/proposal.md">Memory Match Proposal</a>.
 
 
 
-  #### Workflow
+#### <a id="workflow">Workflow</a>
+
   - Start Read Me and Proposal
   - Make sample array of vocabulary words
   - Make function to load array words onto DOM in a grid of squares
@@ -422,13 +424,13 @@ For more details and sample UI, please click on <a href="/proposal.md">Memory Ma
   - Add 'sound matches pic' version; (use generic icon for sound for visual)
 
 
-#### Fixes
+#### <a id="fixes">Fixes</a>
   - Timer doesn't stop immediately after game is won.
 
 
-#### Future features
+#### <a id="features">Future feature</a>
  - custom word content (use a ``<form>`` for user to make custom content of words and their matches) and
     add it to players ``<select>`` menu with button to edit it if it's selected.
  - store that custom content in browser's ``LocalStorage`` and add to players ``<select>`` menu
 
-[Back to Table of Contents](#table-of-contents)
+[back to the top](#table-of-contents)

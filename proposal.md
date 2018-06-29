@@ -16,6 +16,9 @@ Make a _Memory Match_ game where all card pairs must be matched to win the game.
 **Desktop Screen**
 ![desktop screen](images/readme_pics/desktop.png)
 
+**Modal Window Showing Results and Best Times**
+![Modal Window](images/readme_pics/youWon.png)
+
   #### Game Behavior
   - Game board is 4 x 4 grid of 8 hidden card pairs
   - Hidden card pairs are randomly shuffled
@@ -29,7 +32,7 @@ Make a _Memory Match_ game where all card pairs must be matched to win the game.
     - modal window to congratulate the player
     - show how much time it took to complete the challenge
     - ask to play again or quit
-    - Show a __Top Five Times__ box
+    - Show a __Best Times__ box
 
 
   #### Components
